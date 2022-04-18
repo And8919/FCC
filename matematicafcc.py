@@ -187,7 +187,7 @@ def arithmetic_arranger(problems, solutions = False): # da capire perchè non va
                 sol4 += str((int(operazione4[0]) + int(operazione4[2])))
             else:
                 sol4 += str(int(operazione4[0]) - int(operazione4[2]))
-            if '+' in operazione2:
+            if '+' in operazione5:
                 sol5 += str((int(operazione5[0]) + int(operazione5[2])))
             else:
                 sol5 += str(int(operazione5[0]) - int(operazione5[2]))
@@ -209,8 +209,6 @@ def arithmetic_arranger(problems, solutions = False): # da capire perchè non va
         print((len(base1) - len(sol1)) * ' ' + sol1 + '    ' + (len(base2) - len(sol2)) * ' ' + sol2 + '    ' + (len(base3) - len(sol3)) * ' ' + sol3 + '    ' + (len(base4) - len(sol4)) * ' ' + sol4 + '    ' + (len(base5) - len(sol5)) * ' ' + sol5)
 
 
-    return arranged_problems
+    #return arranged_problems
 
-
-#print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
 print(arithmetic_arranger(["32 + 698", '10 + 10', '1000 - 34', '10 + 1', '200 - 59',], True))
