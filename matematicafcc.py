@@ -1,9 +1,5 @@
 
-
-from ssl import OP_NO_TLSv1_1
-
-
-def arithmetic_arranger(problems, solutions = False):
+def arithmetic_arranger(problems, solutions = False): # da capire perchè non va il true
     
 # divido le singole operazioni (utili per le sommealla fine)
     operazione1 = []
@@ -123,23 +119,57 @@ def arithmetic_arranger(problems, solutions = False):
     except:
         pass
 
+    
+#soluzioni se True
+
+    sol1 = ''
+    sol2 = ''
+    sol3 = ''
+    sol4 = ''
+    sol5 = ''
+
+    try:
+        if solutions == True:
+            if '+' in operazione1:
+                sol1 += str(int(operazione1[0]) + int(operazione1[2]))
+            else:
+                sol1 += str(int(operazione1[0]) - int(operazione1[2]))
+            if '+' in operazione2:
+                sol2 += str((int(operazione2[0]) + int(operazione2[2])))
+            else:
+                sol2 += str(int(operazione2[0]) - int(operazione2[2]))
+            if '+' in operazione3:
+                sol3 += str((int(operazione3[0]) + int(operazione3[2])))
+            else:
+                sol3 += str(int(operazione3[0]) - int(operazione3[2]))
+            if '+' in operazione4:
+                sol4 += str((int(operazione4[0]) + int(operazione4[2])))
+            else:
+                sol4 += str(int(operazione4[0]) - int(operazione4[2]))
+            if '+' in operazione2:
+                sol5 += str((int(operazione5[0]) + int(operazione5[2])))
+            else:
+                sol5 += str(int(operazione5[0]) - int(operazione5[2]))
+    except:
+        pass
 
 
 
 
-
-
-
-
-
-
-
-
-
+    if len(problems) == 1:
+        print((len(base1) - len(sol1)) * ' ' + sol1)
+    elif len(problems) == 2:
+        print((len(base1) - len(sol1)) * ' ' + sol1 + '  ' + (len(base2) - len(sol2)) * ' ' + sol2)
+    elif len(problems) == 3:
+        print((len(base1) - len(sol1)) * ' ' + sol1 + '  ' + (len(base2) - len(sol2)) * ' ' + sol2 + '  ' + (len(base3) - len(sol3)) * ' ' + sol3)
+    elif len(problems) == 4:
+        print((len(base1) - len(sol1)) * ' ' + sol1 + '  ' + (len(base2) - len(sol2)) * ' ' + sol2 + '  ' + (len(base3) - len(sol3)) * ' ' + sol3 + '  ' + (len(base4) - len(sol4)) * ' ' + sol4)
+    elif len(problems) == 5:
+        print((len(base1) - len(sol1)) * ' ' + sol1 + '  ' + (len(base2) - len(sol2)) * ' ' + sol2 + '  ' + (len(base3) - len(sol3)) * ' ' + sol3 + '  ' + (len(base4) - len(sol4)) * ' ' + sol4 + '  ' + (len(base5) - len(sol5)) * ' ' + sol5)
 
 
     #return arranged_problems
 
 
-print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
-#print(arithmetic_arranger(["32 + 698"]))
+#print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
+print(arithmetic_arranger(["32 + 698", '10 + 10', '1000 - 34', '10 + 1', '200 - 59'], True))
