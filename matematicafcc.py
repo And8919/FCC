@@ -1,6 +1,7 @@
 
 def arithmetic_arranger(problems, solutions = False): # da capire perchè non va il true
     
+
 # divido le singole operazioni (utili per le sommealla fine)
     operazione1 = []
     operazione2 = []
@@ -58,6 +59,46 @@ def arithmetic_arranger(problems, solutions = False): # da capire perchè non va
 
 
 
+
+#errori
+
+    if len(problems) > 5:
+        print('Error: Too many problems.')
+        quit()
+    else:
+        None
+
+    for x in op1:
+        if len(x) > 4:
+            print('Error: Numbers cannot be more than four digits.')
+            quit()
+        try:
+            x = int(x)
+        except ValueError:
+            print('Error: Numbers must only contain digits.')
+            quit()
+    for x in op2:
+        if len(x) > 4:
+            print('Error: Numbers cannot be more than four digits.')
+            quit()
+        try:
+            x = int(x)
+        except ValueError:
+            print('Error: Numbers must only contain digits.')
+            quit()
+
+    for a in sign:
+        if a == '*' or a == '/':
+            print('Error: Operator must be "+" or "-".')
+            quit()
+
+
+
+
+
+
+
+
 # creo la lunghezzza delle basi (controllare quanti trattini)
     try:
         base1 ='-' * len(operazione1max) + '--'
@@ -74,13 +115,13 @@ def arithmetic_arranger(problems, solutions = False): # da capire perchè non va
         if len(problems) == 1:
             print(' ' * (len(base1) - len(op1[0])) + op1[0])
         elif len(problems) == 2:
-            print(' ' * (len(base1) - len(op1[0])) + op1[0] + '  ' +' ' * (len(base2) - len(op1[1])) + op1[1])
+            print(' ' * (len(base1) - len(op1[0])) + op1[0] + '    ' +' ' * (len(base2) - len(op1[1])) + op1[1])
         elif len(problems) == 3:
-            print(' ' * (len(base1) - len(op1[0])) + op1[0] + '  ' + ' ' * (len(base2) - len(op1[1])) + op1[1] + '  ' + ' ' * (len(base3) - len(op1[2])) + op1[2])
+            print(' ' * (len(base1) - len(op1[0])) + op1[0] + '    ' + ' ' * (len(base2) - len(op1[1])) + op1[1] + '    ' + ' ' * (len(base3) - len(op1[2])) + op1[2])
         elif len(problems) == 4:
-            print(' ' * (len(base1) - len(op1[0])) + op1[0] + '  ' + ' ' * (len(base2) - len(op1[1])) + op1[1] + '  ' + ' ' * (len(base3) - len(op1[2])) + op1[2] + '  ' + ' ' * (len(base4) - len(op1[3])) + op1[3])
+            print(' ' * (len(base1) - len(op1[0])) + op1[0] + '    ' + ' ' * (len(base2) - len(op1[1])) + op1[1] + '    ' + ' ' * (len(base3) - len(op1[2])) + op1[2] + '    ' + ' ' * (len(base4) - len(op1[3])) + op1[3])
         elif len(problems) == 5:
-            print(' ' * (len(base1) - len(op1[0])) + op1[0] + '  ' + ' ' * (len(base2) - len(op1[1])) + op1[1] + '  ' + ' ' * (len(base3) - len(op1[2])) + op1[2] + '  ' + ' ' * (len(base4) - len(op1[3])) + op1[3] + '  ' + ' ' * (len(base5) - len(op1[4])) + op1[4])
+            print(' ' * (len(base1) - len(op1[0])) + op1[0] + '    ' + ' ' * (len(base2) - len(op1[1])) + op1[1] + '    ' + ' ' * (len(base3) - len(op1[2])) + op1[2] + '    ' + ' ' * (len(base4) - len(op1[3])) + op1[3] + '    ' + ' ' * (len(base5) - len(op1[4])) + op1[4])
     except:
         pass
 
@@ -92,13 +133,13 @@ def arithmetic_arranger(problems, solutions = False): # da capire perchè non va
         if len(problems) == 1:
             print(sign[0] + ' ' * (int(len(base1) - len(op2[0]) - 1)) + op2[0])
         elif len(problems) == 2:
-            print(sign[0] + ' ' * (int(len(base1) - len(op2[0]) - 1)) + op2[0] + '  ' + sign[1] +  ' ' * (int(len(base2) - len(op2[1]) -1)) + op2[1])
+            print(sign[0] + ' ' * (int(len(base1) - len(op2[0]) - 1)) + op2[0] + '    ' + sign[1] +  ' ' * (int(len(base2) - len(op2[1]) -1)) + op2[1])
         elif len(problems) == 3:
-            print(sign[0] + ' ' * (int(len(base1) - len(op2[0]) - 1)) + op2[0] + '  ' + sign[1] + ' ' * (int(len(base2) - len(op2[1]) -1 )) + op2[1] + '  ' + sign[2] + ' ' * (int(len(base3) - len(op2[2]) -1 )) + op2[2])
+            print(sign[0] + ' ' * (int(len(base1) - len(op2[0]) - 1)) + op2[0] + '    ' + sign[1] + ' ' * (int(len(base2) - len(op2[1]) -1 )) + op2[1] + '    ' + sign[2] + ' ' * (int(len(base3) - len(op2[2]) -1 )) + op2[2])
         elif len(problems) == 4:
-            print(sign[0] + ' ' * (int(len(base1) - len(op2[0]) -1 )) + op2[0] + '  ' + sign[1] + ' ' * (int(len(base2) - len(op2[1]) -1 )) + op2[1] + '  ' + sign[2] + ' ' * (int(len(base3) - len(op2[2]) -1 )) + op2[2] + '  ' + sign[3] + ' ' * (int(len(base4) - len(op2[3]) -1 )) + op2[3])
+            print(sign[0] + ' ' * (int(len(base1) - len(op2[0]) -1 )) + op2[0] + '    ' + sign[1] + ' ' * (int(len(base2) - len(op2[1]) -1 )) + op2[1] + '    ' + sign[2] + ' ' * (int(len(base3) - len(op2[2]) -1 )) + op2[2] + '    ' + sign[3] + ' ' * (int(len(base4) - len(op2[3]) -1 )) + op2[3])
         elif len(problems) == 5:
-            print(sign[0] + ' ' * (int(len(base1) - len(op2[0]) -1 )) + op2[0] + '  ' + sign[1] + ' ' * (int(len(base2) - len(op2[1]) -1 )) + op2[1] + '  ' + sign[2] + ' ' * (int(len(base3) - len(op2[2]) -1 )) + op2[2] + '  ' + sign[3] + ' ' * (int(len(base4) - len(op2[3]) -1 )) + op2[3] + '  ' + sign[4] + ' ' * (int(len(base5) - len(op2[4]) -1 )) + op2[4])
+            print(sign[0] + ' ' * (int(len(base1) - len(op2[0]) -1 )) + op2[0] + '    ' + sign[1] + ' ' * (int(len(base2) - len(op2[1]) -1 )) + op2[1] + '    ' + sign[2] + ' ' * (int(len(base3) - len(op2[2]) -1 )) + op2[2] + '    ' + sign[3] + ' ' * (int(len(base4) - len(op2[3]) -1 )) + op2[3] + '    ' + sign[4] + ' ' * (int(len(base5) - len(op2[4]) -1 )) + op2[4])
     except:
         pass
 
@@ -109,13 +150,13 @@ def arithmetic_arranger(problems, solutions = False): # da capire perchè non va
         if len(problems) == 1:
             print(base1)
         elif len(problems) == 2:
-            print(base1 + '  ' + base2)
+            print(base1 + '    ' + base2)
         elif len(problems) == 3:
-            print(base1 + '  ' + base2 + '  ' + base3)
+            print(base1 + '    ' + base2 + '    ' + base3)
         elif len(problems) == 4:
-            print(base1 + '  ' + base2 + '  ' + base3 + '  ' + base4)
+            print(base1 + '    ' + base2 + '    ' + base3 + '    ' + base4)
         elif len(problems) == 5:
-            print(base1 + '  ' + base2 + '  ' + base3 + '  ' + base4 + '  ' + base5)
+            print(base1 + '    ' + base2 + '    ' + base3 + '    ' + base4 + '    ' + base5)
     except:
         pass
 
@@ -159,17 +200,17 @@ def arithmetic_arranger(problems, solutions = False): # da capire perchè non va
     if len(problems) == 1:
         print((len(base1) - len(sol1)) * ' ' + sol1)
     elif len(problems) == 2:
-        print((len(base1) - len(sol1)) * ' ' + sol1 + '  ' + (len(base2) - len(sol2)) * ' ' + sol2)
+        print((len(base1) - len(sol1)) * ' ' + sol1 + '    ' + (len(base2) - len(sol2)) * ' ' + sol2)
     elif len(problems) == 3:
-        print((len(base1) - len(sol1)) * ' ' + sol1 + '  ' + (len(base2) - len(sol2)) * ' ' + sol2 + '  ' + (len(base3) - len(sol3)) * ' ' + sol3)
+        print((len(base1) - len(sol1)) * ' ' + sol1 + '    ' + (len(base2) - len(sol2)) * ' ' + sol2 + '    ' + (len(base3) - len(sol3)) * ' ' + sol3)
     elif len(problems) == 4:
-        print((len(base1) - len(sol1)) * ' ' + sol1 + '  ' + (len(base2) - len(sol2)) * ' ' + sol2 + '  ' + (len(base3) - len(sol3)) * ' ' + sol3 + '  ' + (len(base4) - len(sol4)) * ' ' + sol4)
+        print((len(base1) - len(sol1)) * ' ' + sol1 + '    ' + (len(base2) - len(sol2)) * ' ' + sol2 + '    ' + (len(base3) - len(sol3)) * ' ' + sol3 + '    ' + (len(base4) - len(sol4)) * ' ' + sol4)
     elif len(problems) == 5:
-        print((len(base1) - len(sol1)) * ' ' + sol1 + '  ' + (len(base2) - len(sol2)) * ' ' + sol2 + '  ' + (len(base3) - len(sol3)) * ' ' + sol3 + '  ' + (len(base4) - len(sol4)) * ' ' + sol4 + '  ' + (len(base5) - len(sol5)) * ' ' + sol5)
+        print((len(base1) - len(sol1)) * ' ' + sol1 + '    ' + (len(base2) - len(sol2)) * ' ' + sol2 + '    ' + (len(base3) - len(sol3)) * ' ' + sol3 + '    ' + (len(base4) - len(sol4)) * ' ' + sol4 + '    ' + (len(base5) - len(sol5)) * ' ' + sol5)
 
 
-    #return arranged_problems
+    return arranged_problems
 
 
 #print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
-print(arithmetic_arranger(["32 + 698", '10 + 10', '1000 - 34', '10 + 1', '200 - 59'], True))
+print(arithmetic_arranger(["32 + 698", '10 + 10', '1000 - 34', '10 + 1', '200 - 59',], True))
